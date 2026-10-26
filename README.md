@@ -4,7 +4,7 @@
 
 # QueueWatch — A Python CLI for Job Processing, Monitoring, Retries, and AI-Assisted Failure Analysis
 
-**Submit a job. Track its progress. Retry temporary failures. Understand what went wrong.**
+**Submit a job. Track its progress. Retry temporary failures. Understand what went wrong.** 
 
 A lightweight Python CLI that runs jobs in background processes, records their status in SQLite, and optionally uses AI to explain failures.
 
@@ -214,10 +214,3 @@ pytest
 - There is no exactly-once execution guarantee. The included example tasks are safe to run twice.
 - Error sanitization is best-effort and cannot guarantee removal of all sensitive information.
 - QueueWatch is designed for a single machine.
-
-## Ideas for later
-
-- [ ] Job timeouts
-- [ ] A `cancel` command
-- [ ] Recovery for jobs stuck in `RUNNING`
-- [ ] JSON output for scripts and automation
