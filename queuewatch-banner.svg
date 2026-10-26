@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">QueueWatch — background jobs, visible progress</title>
+  <desc id="desc">An animated job moves from queued through running and retrying to success. Python CLI, SQLite tracking, automatic retries, optional AI insights.</desc>
+  <defs>
+    <linearGradient id="bg" x2="1" y2="1">
+      <stop stop-color="#0b1225"/>
+      <stop offset="1" stop-color="#102d3b"/>
+    </linearGradient>
+    <linearGradient id="accent">
+      <stop stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+    <pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse">
+      <path d="M32 0H0V32" fill="none" stroke="#8bc5dc" stroke-opacity=".06"/>
+    </pattern>
+    <style>
+      text { font-family: 'Segoe UI', Arial, sans-serif; }
+      .label { font-family: Consolas, 'Courier New', monospace; font-size: 15px; font-weight: 700; letter-spacing: 2px; }
+      .pulse { animation: pulse 3s ease-in-out infinite; }
+      .packet { animation: travel 6s ease-in-out infinite; }
+      @keyframes pulse { 0%,100% { opacity: .35; } 50% { opacity: 1; } }
+      @keyframes travel { 0%,10% { transform: translateX(0); opacity: 0; } 15% { opacity: 1; } 35% { transform: translateX(260px); } 60% { transform: translateX(520px); } 85%,95% { transform: translateX(780px); opacity: 1; } 100% { transform: translateX(780px); opacity: 0; } }
+      @media (prefers-reduced-motion: reduce) { .pulse, .packet { animation: none; } .packet { opacity: 0; } }
+    </style>
+  </defs>
+  <rect width="1200" height="380" rx="24" fill="url(#bg)"/>
+  <rect width="1200" height="380" rx="24" fill="url(#grid)"/>
+  <rect x="1" y="1" width="1198" height="378" rx="23" fill="none" stroke="#294354"/>
+  <rect x="52" y="48" width="6" height="69" rx="3" fill="url(#accent)"/>
+  <text x="78" y="94" fill="#f1f5f9" font-size="51" font-weight="750" letter-spacing="-2">QueueWatch</text>
+  <text x="79" y="128" fill="#a7c5d7" font-size="18">Background jobs. Visible progress. Smarter failure analysis.</text>
+  <rect x="960" y="58" width="184" height="34" rx="17" fill="#103b38" stroke="#256257"/>
+  <circle cx="979" cy="75" r="4" fill="#4ade80" class="pulse"/>
+  <text x="993" y="80" font-size="12" font-weight="700" letter-spacing="1.2" fill="#b5f3d6">LOCAL · LIGHTWEIGHT</text>
+  <path d="M210 224H990" stroke="#315168" stroke-width="2" stroke-dasharray="5 7"/>
+  <circle class="packet" cx="210" cy="224" r="7" fill="#67e8f9"/>
+  <g>
+    <rect x="120" y="190" width="180" height="68" rx="14" fill="#142944" stroke="#60a5fa"/>
+    <circle cx="148" cy="224" r="5" fill="#60a5fa"/>
+    <text x="169" y="230" class="label" fill="#bfdbfe">QUEUED</text>
+    <rect x="380" y="190" width="180" height="68" rx="14" fill="#113440" stroke="#22d3ee"/>
+    <circle cx="408" cy="224" r="5" fill="#22d3ee" class="pulse"/>
+    <text x="429" y="230" class="label" fill="#a5f3fc">RUNNING</text>
+    <rect x="640" y="190" width="180" height="68" rx="14" fill="#372e20" stroke="#fbbf24"/>
+    <circle cx="664" cy="224" r="5" fill="#fbbf24"/>
+    <text x="683" y="230" class="label" fill="#fde68a">RETRYING</text>
+    <rect x="900" y="190" width="180" height="68" rx="14" fill="#11392e" stroke="#4ade80"/>
+    <circle cx="928" cy="224" r="5" fill="#4ade80" class="pulse"/>
+    <text x="949" y="230" class="label" fill="#bbf7d0">SUCCESS</text>
+  </g>
+  <text x="210" y="284" text-anchor="middle" fill="#8daabd" font-size="13">Save the job</text>
+  <text x="470" y="284" text-anchor="middle" fill="#8daabd" font-size="13">Start a worker</text>
+  <text x="730" y="284" text-anchor="middle" fill="#8daabd" font-size="13">Back off · Try again</text>
+  <text x="990" y="284" text-anchor="middle" fill="#8daabd" font-size="13">Track the outcome</text>
+  <path d="M52 314H1148" stroke="#284353"/>
+  <text x="54" y="347" fill="#90afc1" font-size="13" letter-spacing="1.5">PYTHON CLI / SQLITE / AUTOMATIC RETRIES / OPTIONAL AI INSIGHTS</text>
+  <text x="1146" y="347" text-anchor="end" fill="#67e8f9" font-family="Consolas, monospace" font-size="13">$ queuewatch submit</text>
+</svg>
