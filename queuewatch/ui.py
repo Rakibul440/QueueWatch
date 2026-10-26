@@ -37,7 +37,6 @@ def info(message):
 
 
 def show_job(job):
-    """Print one job. Every line gets the colour of its status."""
     style = STATUS_STYLES.get(job["status"], "white")
     lines = [
         ("Job ID", job["id"]),
@@ -58,7 +57,6 @@ def show_job(job):
 
 
 def show_jobs_table(rows):
-    """Print a table where each whole row is coloured by status."""
     table = Table(header_style="bold white")
     for column in ["JOB ID", "TASK", "STATUS", "RETRIES", "SUBMITTED"]:
         table.add_column(column)
